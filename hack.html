@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacking Message</title>
+  <style>
+    #counter {
+      font-size: 40px;
+      color: green;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      let count = 10; // Counter starting value
+      const counterElement = document.getElementById('counter');
+
+      // Function to update counter text and decrease count by 1 every second
+      const updateCounter = () => {
+        if (count >= 0) {
+          counterElement.textContent = count;
+          count--;
+        } else {
+          clearInterval(counterInterval);
+          counterElement.style.display = 'none'; // Hide counter when it reaches 0
+        }
+      };
+
+      const counterInterval = setInterval(updateCounter, 1000); // Update counter every second
+      updateCounter(); // Initial update
+    };
+  </script>
+</head>
+<body>
+  <h1 style="color: green;">لقد تم تهكيرك من قبل زياد</h1>
+  <p id="counter">10</p>
+</body>
+</html>
